@@ -1,7 +1,7 @@
 #!/bin/bash
 pods=$(kubectl get pod -n $1 -o json)
 nodes=5
-for ((n = 1; n <= $nodes; n++));
+for ((n = 2; n <= $nodes; n++));
 do
     node="pi-cluster-0$n"
     json=$(echo $pods | jq "
