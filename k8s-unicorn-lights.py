@@ -1,4 +1,5 @@
 import sys
+import os
 import unicornhat as unicorn
 import subprocess
 
@@ -36,7 +37,8 @@ def updateLights(info):
 
 
 while True:
-    output = subprocess.Popen(['./k8s-unicorn-lights.sh', sys.argv[1]], 
+    file_path = os.path.dirname(os.path.abspath(__file__)) + '/k8s-unicorn-lights.sh'
+    output = subprocess.Popen([file_path, sys.argv[1]], 
                 stdout=subprocess.PIPE, 
                 stderr=subprocess.STDOUT)
 

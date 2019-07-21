@@ -34,7 +34,7 @@ Finally I got to the python script that would run an infinite loop and light up 
 The command below starts the watcher in python that updates the led matrix. The arg _"default"_ is in fact the namespace that we want to watch.
 
 ```bash
-python ./k8s-unicorn-lights.py default &
+sudo python ./k8s-unicorn-lights.py default &
 ````
 
 Interestingly enough, after trying it out, I found that the _pending_ state is also used while a pod is being terminated, which is not mentioned in the [Pod phase](https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle/#pod-phase) documentation.
